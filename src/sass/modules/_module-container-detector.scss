@@ -1,0 +1,501 @@
+//
+//  MODULE: CONTAINER DETECTOR
+//
+
+
+#container-detector-panel {
+    background: $search_panel_bg;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    bottom: -100vh;
+    @include transition($med);
+    
+    .loading-panel {
+        &.active {
+            display: flex;
+            @include opacity(1);
+        }
+    }
+
+
+    .container-detector-tool-output {
+        display: flex;
+        align-items: center;
+    }
+
+    #system-chain-stack {
+        position: absolute;
+        width: 100vw;
+        height: 0px;
+        overflow-y: auto;
+        background: $search_panel_bg;
+        @include opacity(0);
+        @include transition($med);
+
+
+        .system-chain-selector {
+            display: flex;
+            cursor: pointer;
+            align-items: center;
+            height: $item-height;
+            border-bottom: 1px solid $search_panel_bg;
+            background-color: $search_panel_button_bg;
+            display: flex;
+            position: relative;
+            justify-content: space-evenly;
+
+            @include transition($med);
+            &:hover, &.selected {
+                background-color: $search_panel_button_hover;
+            }
+
+            &:last-of-type {
+                margin-bottom: ($item-height *2);
+            }
+        }
+
+        &.active {
+            height: 100vh;
+            @include opacity(1);
+        }
+
+    }
+
+    #comms-container-detector {
+        .chain-system {
+            display: flex;
+            position: relative;
+            justify-content: space-between;
+            align-items: center;
+            height: $item-height;
+            display: none;
+            
+            &.active {
+                display: flex;
+            }
+        }
+        /*
+        position: absolute;
+        width: 100vw;
+        height: 0px;
+        overflow: hidden;
+        background: $search_panel_bg;
+        @include opacity(0);
+        @include transition($med);
+        display: flex;
+
+        &.active {
+            height: (($item-height * 3) + 3);
+            @include opacity(1);
+        }
+
+        #system-cpa_cc-stack, #system-cd-stack {
+            width: 50%;
+        }
+
+        .comms-row {
+            height: $item-height;
+            border-bottom: 1px solid $search_panel_border;
+            display: flex;
+            position: relative;
+            justify-content: space-around;
+            width: 100%;
+            
+
+            .system-name {
+                
+            }
+
+            div {
+                display: flex;
+                position: relative;
+                //justify-content: space-between;
+                align-items: center;
+                input {
+                    padding: 0 $stack-spacing;
+                    height: $item-height;
+                    background-color: $color_header_button_bg_hover;
+                    color: $color_header_button_text;
+                    border: none;
+                }
+            }
+        }
+
+        */
+    }
+
+    .container-detector-inner-panel {
+        display: flex;
+        position: relative;
+        align-items: flex-start;
+        @extend .user-select;
+
+
+        
+
+        .stack-menu {
+            height: 100vh;
+            overflow-y: auto;
+            .stack-item-button:last-of-type {
+                margin-bottom: ($header-height  + ($item-height * 3));
+            }
+        }
+        
+        .container-detector-list-column {
+            width: 20vw;
+            &#manifest-list-column {
+                width: 25vw;
+            }
+
+            &#unassigned-list-column {
+                width: 35vw;
+            }
+
+            border-right: 1px solid $file_slide_bg;
+
+            &.filter-controls {
+                .list-header {
+                    padding-right: 0px;
+                }
+            }
+
+            .list-header {
+                padding: 0 $stack-spacing;
+                height: $item-height;
+                border-bottom: 1px solid $search_panel_border;
+                display: flex;
+                position: relative;
+                justify-content: space-between;
+                align-items: center;
+        
+                .header-text {
+                    width:70%;
+                }
+
+                select {
+                    margin-right: $stack-spacing;
+                    min-width: auto;
+                }
+
+                .search-input {
+                    padding: 0 10px;
+                    height: $item-height;
+                    width: 50%;
+                    background-color: $color_header_button_bg_hover;
+                    color: $color_header_button_text;
+                    border: none;
+                }
+        
+                button {
+                    padding: 0 10px;
+                    height: $item-height;
+                    border: none;
+                    @include opacity(0.75);
+                    background: $search_panel_bg;
+
+                    &:hover {
+                        @include opacity(1);
+                        background: $side_menu_item_hover;
+                    }
+                    .icon {
+                        height: 30px;
+                    }
+                    cursor: pointer;
+                }
+
+                
+
+            }
+        }
+
+    }
+
+    &.active {
+        bottom: 0vh;
+    }
+    
+    button {
+        background-color: transparent;
+        height: $item-height;
+        width: $item-height;
+        &::before {
+            @include transition($fast);
+            @include scale(1.5);
+        }
+    }
+
+    .container-detector-header {
+        margin-top: 40px;
+        background: $alert;
+        
+        .header-text {
+            font-size: $header-font-size;
+            padding: 0 $stack-spacing;
+        }
+
+        button {
+            &:hover {
+                background: $alert_hover;
+                &::before {
+                    @include scale(1.75);
+                }
+            }
+        }
+    }
+
+
+
+    .container-detector-header {
+        display: flex;
+        position: relative;
+        justify-content: space-between;
+        align-items: center;
+        height: $item-height;
+        border-bottom: 1px solid $search_panel_border;
+        
+    }
+
+
+    
+
+
+    .container-detector-tools, .container-detector-output {
+        display: flex;
+        position: relative;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 $stack-spacing;
+        height: $item-height;
+        border-bottom: 1px solid $search_panel_border;
+        padding-right: 0;
+
+        #container-detector-confidence-slider {
+            width: 15%;
+        }
+
+        #smart-match {
+            &.active {
+                background: $button_green;
+            }
+        }
+
+        .search-input, .date-input {
+            padding: 0 10px;
+            height: $item-height;
+            background-color: $color_header_button_bg_hover;
+            color: $color_header_button_text;
+            border: none;
+        }
+
+        button {
+            padding: 0 10px;
+            height: $item-height;
+            border: none;
+            @include opacity(0.75);
+            background: $search_panel_bg;
+            &:hover {
+                @include opacity(1);
+                background: $side_menu_item_hover;
+            }
+            .icon {
+                height: 30px;
+            }
+            cursor: pointer;
+        }
+
+    }
+
+
+    #manifest-selector {
+        .stack-item-button { 
+            &.selected {
+                display: flex !important;
+            }
+
+            &[data-status="unmatched"] {
+                &.selected {
+                    background-color: $alert_hover;
+                }
+            }
+
+            &[data-status="matched"] {
+                &.selected {
+                    background-color: $medium-hover;
+                }
+            }
+        }
+    }
+    
+
+    #matched-selector {
+        .stack-item-button {
+            display: none;
+
+            &.active {
+                display: flex;
+            }
+            .item-button {
+                &.left-button {
+                    display: none;
+                }
+            }
+        }
+
+    }
+
+    #trashed-selector {
+        .stack-item-button {
+            background-color: $alert;
+            @include opacity(0.7);
+            &:hover {
+                @include opacity(1);
+            }
+            .item-button {
+                &.right-button {
+                    display: none;
+                }
+            }
+        }
+
+    }
+
+    .stack-menu {
+        overflow-y: auto;
+
+        .stack-item-button {
+            cursor: pointer;
+            padding: 0 $stack-spacing;
+            height: $item-height / 2;
+            border-bottom: 1px solid $stack_selector_border;
+            display: flex;
+            position: relative;
+            justify-content: space-evenly;
+            align-items: center;
+    
+            @include transition($med);
+
+
+            .item-button {
+                position: absolute;
+                top: 0;
+                height: $item-height / 2;
+                width: $item-height / 2;
+                display: flex;
+                justify-content: space-evenly;
+                align-items: center;
+                background: $side_menu_item_hover;
+
+                @include transition($med);
+                cursor: pointer;
+
+                &:hover {
+                    background: $side_menu_border;
+                    width: $item-height;
+                }
+
+                &.left-button {
+                    left: 0;
+                }
+
+                &.right-button {
+                    right: 0;
+                }
+                
+            }
+
+            .selected-triangle {
+                position: absolute;
+                right: 0;
+                top: 50%;
+                margin-top: -25px;
+                width: 0;
+                height: 0;
+                border-style: solid;
+                border-width: 25px 0px 25px 0;
+                border-color: transparent $file_slide_bg transparent transparent;
+                @include transition($med);
+            }
+
+            i {
+                font-size: 20px;
+            }
+            
+
+            &.selected {
+                .selected-triangle {
+                    margin-top: -15px;
+                    border-width: 15px 15px 15px 0;
+                }
+    
+            }
+        }
+
+        
+        .stack-item-button {
+            background-color: $stack_selector_bg;
+
+            &[data-status="unmatched"] {
+                background-color: $alert;
+                &:hover {
+                    background-color: $alert_hover;
+                }
+            }
+
+            &[data-status="matched"] {
+                background-color: $medium;
+                &:hover {
+                    background-color: $medium-hover;
+                }
+            }
+
+            &[data-status="unassigned"] {
+                background-color: $note;
+                &:hover {
+                    background-color: $note_hover;
+                }
+            }
+
+            &:hover {
+                background-color: $medium-hover;
+
+
+                
+                &.unassigned {
+                    background-color: $button_orange_hover;
+                }
+            }
+
+            
+            
+        }
+
+        &#container-selector {
+            .stack-item-button {
+
+                background-color: $stack_selector_bg;
+
+                &.unassigned {
+                    background-color: $button_blue;
+                }
+
+                &:hover {
+                    background-color: $medium-hover;
+                    &.unassigned {
+                        background-color: $button_blue_hover;
+                    }
+                }
+
+                &.selected {
+                    background-color: $medium-hover;
+                    &.unassigned {
+                        background-color: $button_blue_hover;
+                    }
+                }
+            }
+        }
+        
+    }
+
+}

@@ -1,0 +1,22 @@
+//
+//	SECTIONS: INVENTORY
+//
+
+
+.file-slide[data-file-id="inventory"] {
+
+
+    @include respond-above(md) {
+        .stack-column {
+            width: 15vw;
+        }
+        
+        .stack-display {
+            width: 85vw;
+        }
+
+        &.active {
+            left: 0vw;
+        }
+    }
+}

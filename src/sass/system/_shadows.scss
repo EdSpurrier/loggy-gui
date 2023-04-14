@@ -1,0 +1,29 @@
+.box-shadow {
+    -webkit-box-shadow: 2px 2px 10px 0px rgba(0,0,0,0.3);
+    -moz-box-shadow: 2px 2px 10px 0px rgba(0,0,0,0.3);
+    box-shadow: 2px 2px 10px 0px rgba(0,0,0,0.3);
+}
+
+.box-shadow-light {
+    -webkit-box-shadow: 2px 2px 10px 0px rgba(0,0,0,0.08);
+    -moz-box-shadow: 2px 2px 10px 0px rgba(0,0,0,0.08);
+    box-shadow: 2px 2px 10px 0px rgba(0,0,0,0.08);
+}
+
+.box-shadow-medium {
+    -webkit-box-shadow: 2px 2px 10px 0px rgba(0,0,0,0.2);
+    -moz-box-shadow: 2px 2px 10px 0px rgba(0,0,0,0.2);
+    box-shadow: 2px 2px 10px 0px rgba(0,0,0,0.2);
+}
+
+.box-shadow-heavy {
+    -webkit-box-shadow: 2px 2px 10px 0px rgba(0,0,0,0.5);
+    -moz-box-shadow: 2px 2px 10px 0px rgba(0,0,0,0.5);
+    box-shadow: 2px 2px 10px 0px rgba(0,0,0,0.5);
+}
+
+.header-shadow {
+    -webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.35);
+    -moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.35);
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.35);
+}

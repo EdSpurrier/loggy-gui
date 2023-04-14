@@ -1,0 +1,196 @@
+//
+//  COLOR PALETTE
+//
+
+
+
+$color_theme : (
+    xbox_green : (
+        dark : #003840,
+        medium_dark : #005A5B,
+        medium: #007369,
+        medium_light : #008C72,
+        light : #02A676,
+        medium_text : #2C3531,
+
+        color_body_bg                   : #111,
+        color_body_text                 : white,
+
+        header_bg                       : black,
+        header_text                     : #fff,
+        header_button_bg_hover          : #222,
+        header_button_text_hover        : #fff,
+
+        search_panel_bg                 : #151515,
+        search_panel_text               : #fff,
+        search_panel_button_bg          : #222,
+        search_panel_button_hover       : #333,
+        search_panel_border             : #444,
+
+        file_slide_bg                   : #222,
+        file_slide_border               : #222,
+        file_slide_tag_bg               : #333,
+        file_slide_tag_text             : #999,
+
+        stack_column_bg                 : #151515,
+        stack_selector_border           : #151515,
+        stack_selector_bg               : #005A5B,
+        stack_selector_bg_no_events     : #333,
+        stack_selector_dropdown_bg      : #333,
+
+        side_menu_bg                    : #222,
+        side_menu_border                : #444,
+        side_menu_item_hover            : #333,
+
+        create_item_bg                  : #ff8d0c,
+        header_border                   : #444,
+        
+        data_line_bg                    : #222,
+
+        form_input_text                 : #999,
+        form_input_text_focus           : #fff,
+        form_input_bg                   : #222,
+        form_input_alert_bg             : #1e080c,
+
+        alert                           : #ab2e46,
+        success                         : #24af42,
+        important                       : #6a3ddb,
+        note                            : #276cd4,
+
+        popup_blackout                  : rgba(0, 0, 0, 0.75),
+        popup_window_text               : white,
+        popup_window_bg                 : #222,
+
+
+
+        button_text                     : white,
+        button_blue                     : #306dd1,
+        button_purple                   : #6a3ddb,
+        button_orange                   : #ffa500,
+        button_green                    : #3be05f,
+
+        table_bg                        : darken(white, 10%),
+        table_cell_bg                   : white,
+        table_cell_aleternate_bg        : #f2f2f2,
+
+
+        avatar_border                   : #444,
+        
+    ),
+);
+
+
+
+
+$theme_choice : xbox_green;
+
+// COLOURS > HEADER
+$body_bg                        : GetPaletteColor(color_body_bg, $theme_choice);
+$body_text                      : GetPaletteColor(color_body_text, $theme_choice);
+
+$header_bg                      : GetPaletteColor(header_bg, $theme_choice);
+$color_header_text              : GetPaletteColor(header_text, $theme_choice);
+$color_header_button_bg_hover   : GetPaletteColor(header_button_bg_hover, $theme_choice);
+$color_header_button_text       : GetPaletteColor(header_button_text_hover, $theme_choice);
+
+
+$search_panel_bg                : GetPaletteColor(search_panel_bg, $theme_choice);
+$search_panel_text              : GetPaletteColor(search_panel_text, $theme_choice);
+$search_panel_button_bg         : GetPaletteColor(search_panel_button_bg, $theme_choice);
+$search_panel_button_hover      : GetPaletteColor(search_panel_button_hover, $theme_choice);
+$search_panel_border            : GetPaletteColor(search_panel_border, $theme_choice);
+
+
+$file_slide_border              : GetPaletteColor(file_slide_border, $theme_choice);
+$file_slide_bg                  : GetPaletteColor(file_slide_bg, $theme_choice);
+$file_slide_tag_bg              : GetPaletteColor(file_slide_tag_bg, $theme_choice);
+$file_slide_tag_text            : GetPaletteColor(file_slide_tag_text, $theme_choice);
+
+$stack_column_bg                : GetPaletteColor(stack_column_bg, $theme_choice);
+$stack_selector_border          : GetPaletteColor(stack_selector_border, $theme_choice);
+$stack_selector_bg              : GetPaletteColor(stack_selector_bg, $theme_choice);
+$stack_selector_bg_no_events    : GetPaletteColor(stack_selector_bg_no_events, $theme_choice);
+$stack_selector_bg_no_events_selected : lighten($stack_selector_bg_no_events, 15%);
+
+$stack_selector_dropdown_bg     : GetPaletteColor(stack_selector_dropdown_bg, $theme_choice);
+
+
+$create_item_bg                 : GetPaletteColor(create_item_bg, $theme_choice);
+$create_item_bg_hover           : lighten($create_item_bg, 5%);
+$create_item_active_bg          : lighten($create_item_bg, 10%);
+
+$header_border                  : GetPaletteColor(header_border, $theme_choice);
+$data_line_bg                   : GetPaletteColor(data_line_bg, $theme_choice);
+
+$form_input_text                : GetPaletteColor(form_input_text, $theme_choice);
+$form_input_text_focus          : GetPaletteColor(form_input_text_focus, $theme_choice);
+$form_input_bg                  : GetPaletteColor(form_input_bg, $theme_choice);
+$form_input_alert_bg            : GetPaletteColor(form_input_alert_bg, $theme_choice);
+
+$side_menu_bg                   : GetPaletteColor(side_menu_bg, $theme_choice);
+$side_menu_border               : GetPaletteColor(side_menu_border, $theme_choice);
+$side_menu_item_hover           : GetPaletteColor(side_menu_item_hover, $theme_choice);
+
+
+$popup_blackout                 : GetPaletteColor(popup_blackout, $theme_choice);
+
+
+$alert                          : GetPaletteColor(alert, $theme_choice);
+$alert_hover                    : lighten($alert, 10%);
+
+$success                        : GetPaletteColor(success, $theme_choice);
+$success_hover                  : lighten($success, 10%);
+
+$important                      : GetPaletteColor(important, $theme_choice);
+$important_hover                : lighten($important, 10%);
+
+$note                           : GetPaletteColor(note, $theme_choice);
+$note_hover                     : lighten($note, 10%);
+
+$popup_window_bg                : GetPaletteColor(popup_window_bg, $theme_choice);
+$popup_window_text              : GetPaletteColor(popup_window_text, $theme_choice);
+
+
+$button_text                    : GetPaletteColor(button_text, $theme_choice);
+
+$button_blue                    : GetPaletteColor(button_blue, $theme_choice);
+$button_blue_hover              : lighten($button_blue, 10%);
+
+$button_purple                  : GetPaletteColor(button_purple, $theme_choice);
+$button_purple_hover            : lighten($button_purple, 10%);
+
+$button_orange                  : GetPaletteColor(button_orange, $theme_choice);
+$button_orange_hover            : lighten($button_orange, 10%);
+
+$button_green                   : GetPaletteColor(button_green, $theme_choice);
+$button_green_hover             : lighten($button_green, 10%);
+
+$avatar_border                  : GetPaletteColor(avatar_border, $theme_choice);
+$avatar_border_hover            : lighten($avatar_border, 10%);
+
+
+//  TABLES
+$table_bg                       : GetPaletteColor(table_bg, $theme_choice);
+$table_cell_aleternate_bg       : GetPaletteColor(table_cell_aleternate_bg, $theme_choice);
+$table_cell_bg                  : GetPaletteColor(table_cell_bg, $theme_choice);
+$table_cell_hover_bg            : darmken($table_cell_bg, 10%);
+
+$dark                           : GetPaletteColor(dark, $theme_choice);
+$dark_hover                     : lighten($dark, 10%);
+
+$medium_dark                    : GetPaletteColor(medium_dark, $theme_choice);
+$medium_dark_hover              : lighten($medium_dark, 10%);
+
+$medium                         : GetPaletteColor(medium, $theme_choice);
+$medium_hover                   : lighten($medium, 10%);
+$medium_border                  : darken($medium, 10%);
+$medium_text                    : GetPaletteColor(medium_text, $theme_choice);
+
+
+$medium_light                   : GetPaletteColor(medium_light, $theme_choice);
+$medium_light_hover             : lighten($medium_light, 10%);
+
+$light                          : GetPaletteColor(light, $theme_choice);
+$light_hover                    : lighten($light, 10%);
+
+

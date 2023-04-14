@@ -1,0 +1,187 @@
+//
+//  MODULE: EVENT
+//
+
+
+#event-panel {
+    background: $search_panel_bg;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    bottom: -100vh;
+    @include transition($med);
+    overflow-y: auto;
+
+
+    .event-chooser-inner-panel {
+        display: flex;
+        position: relative;
+        align-items: flex-start;
+        
+        #event-list-column {
+            width: 30vw;
+        }
+
+        #event-meta-column {
+            width: 40vw;
+            border-left: 1px solid $search_panel_border;
+            border-right: 1px solid $search_panel_border;
+            .data-output-event-line {
+                display: flex;
+                position: relative;
+                justify-content: space-between;
+                align-items: center;
+                height: $item-height;
+                border-bottom: 1px solid $search_panel_border;
+                padding: 0 $stack-spacing;
+            }
+            min-height: 100vh;
+        }
+
+        #event-assignment-column {
+            width: 30vw;
+        }
+    }
+
+    &.active {
+        bottom: 0vh;
+    }
+    
+    button {
+        background-color: transparent;
+        height: $item-height;
+        width: $item-height;
+        &::before {
+            @include transition($fast);
+            @include scale(1.5);
+        }
+    }
+
+    .event-header {
+        margin-top: 40px;
+        background: $important;
+        
+        .header-text {
+            font-size: $header-font-size;
+            padding: 0 $stack-spacing;
+        }
+
+        button {
+            &:hover {
+                background: $important_hover;
+                &::before {
+                    @include scale(1.75);
+                }
+            }
+        }
+    }
+
+
+
+    .event-header {
+        display: flex;
+        position: relative;
+        justify-content: space-between;
+        align-items: center;
+        height: $item-height;
+        border-bottom: 1px solid $search_panel_border;
+    }
+
+    #assignment-form {
+    }
+
+    .stack-menu {
+        width: 30vw;
+        //margin: $spacing auto;
+        .stack-item-button {
+            cursor: pointer;
+            padding: 0 $stack-spacing;
+            height: $item-height;
+            border-bottom: 1px solid $stack_selector_border;
+            display: flex;
+            position: relative;
+            justify-content: space-evenly;
+            align-items: center;
+    
+            @include transition($med);
+
+            .selected-triangle {
+                position: absolute;
+                right: 0;
+                top: 50%;
+                margin-top: -25px;
+                width: 0;
+                height: 0;
+                border-style: solid;
+                border-width: 25px 0px 25px 0;
+                border-color: transparent $file_slide_bg transparent transparent;
+                @include transition($med);
+            }
+
+            i {
+                font-size: 20px;
+            }
+            
+
+            &.selected {
+                .selected-triangle {
+                    margin-top: -15px;
+                    border-width: 15px 15px 15px 0;
+                }
+    
+            }
+        }
+
+        &#event-selector {
+            .stack-item-button {
+                background-color: $stack_selector_bg;
+
+                &.unassigned {
+                    background-color: $button_orange;
+                }
+
+                &:hover {
+                    background-color: $medium-hover;
+                    &.unassigned {
+                        background-color: $button_orange_hover;
+                    }
+                }
+
+                &.selected {
+                    background-color: $medium-hover;
+                    &.unassigned {
+                        background-color: $button_orange_hover;
+                    }
+                }
+            }
+        }
+
+        &#container-selector {
+            .stack-item-button {
+
+                background-color: $stack_selector_bg;
+
+                &.unassigned {
+                    background-color: $button_blue;
+                }
+
+                &:hover {
+                    background-color: $medium-hover;
+                    &.unassigned {
+                        background-color: $button_blue_hover;
+                    }
+                }
+
+                &.selected {
+                    background-color: $medium-hover;
+                    &.unassigned {
+                        background-color: $button_blue_hover;
+                    }
+                }
+            }
+        }
+        
+    }
+
+}

@@ -1,0 +1,43 @@
+/**
+ * jQuery PopMenu
+ * 
+ * Collection of icons for jQuery PopMenu.
+ * 
+ * @author   Fajar Chandra
+ * @since    2014.05.29
+ */
+
+.PopMenu-Icon[data-icon=cut]:before {
+	content: '✂';
+}
+
+.PopMenu-Icon[data-icon=favorite]:before {
+	content: '★';
+}
+
+.PopMenu-Icon[data-icon=delete]:before {
+	content: '❌';
+}
+
+.PopMenu-Icon[data-icon=add]:before {
+	content: '➕';
+}
+
+.PopMenu-Icon[data-icon=remove]:before {
+	content: '➖';
+}
+
+.PopMenu-Icon[data-icon=ok]:before,
+.PopMenu-Icon[data-icon=yes]:before {
+	content: '✓';
+}
+
+.PopMenu-Icon[data-icon=cancel]:before,
+.PopMenu-Icon[data-icon=no]:before {
+	content: '✗';
+}
+
+.PopMenu-Icon[data-icon=help]:before {
+	content: '?';
+	font-weight: bold;
+}

@@ -1,0 +1,118 @@
+//
+//	APP: FILE CABINET
+//
+
+.file-slide {
+
+    border: 1px solid $file_slide_border;
+    width: 100vw;
+    height: 100vh;
+    padding-top: 64px;
+    position: fixed;
+    //@include rotate(-60);
+    left: 110vw;
+    @include transition($med);
+
+
+
+    @include respond-below(md) {
+
+        .stack-column {
+            width: 20vw;
+        }
+        
+        .stack-display {
+            width: 80vw;
+        }
+
+
+        &.active {
+            left: 0vw;
+    
+            
+    
+            &.parent {
+                left: -50vw;
+            }
+        }
+    }
+
+
+
+/* 
+    &.active {
+        left: 10vw;
+        top: 10vh;
+        @include opacity(1);
+        filter: blur(0);
+        
+        &.parent {
+            &[data-file-depth="0"] {
+                left: 8vw;
+            }
+            &[data-file-depth="-1"] {
+                left: 6vw;
+            }
+            &[data-file-depth="-2"] {
+                left: 4vw;
+            }
+            &[data-file-depth="-3"] {
+                left: 2vw;
+            }
+            &[data-file-depth="-4"] {
+                left: 0vw;
+            }
+
+            filter: blur(2px);
+        }
+    }
+ */
+
+    .file-slide-tag {
+        background: $file_slide_tag_bg;
+        color: $file_slide_tag_text;
+        position: absolute;
+        top: 40px;
+        left: 0px;
+        height: 24px;
+        //width: 100px;
+        padding: 0 10px;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        font-size: 12px;
+
+        @include transition(top $med);
+        
+        .tag-header {
+            position: relative;
+            margin: 0 auto;
+        }
+
+        .triangle-left {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: -30px;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 0 0 30px 30px;
+            border-color: transparent transparent #ffffff transparent;
+        }
+
+        .triangle-right {
+            display: none;
+            position: absolute;
+            top: 0;
+            right: -30px;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 30px 0 0 30px;
+            border-color: transparent transparent transparent #ffffff;
+        }
+
+    }
+}
+

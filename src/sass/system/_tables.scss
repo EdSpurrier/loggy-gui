@@ -1,0 +1,29 @@
+table {
+    width: 100%;
+    background-color: $table_bg;
+    font-size: 15px;
+
+    th {
+        background-color: $medium;
+        color: $table_cell_bg;
+        font-weight: 200;
+    }
+
+    tr:nth-child(even) {
+        background-color: $table_cell_aleternate_bg;
+    }
+
+    tr:nth-child(odd) {
+        background-color: $table_cell_bg;
+    }
+
+    tr:hover {
+        background-color: $table_cell_hover_bg;
+    }
+
+
+    th, td {
+        padding: 8px;
+        text-align: left;
+    }
+}

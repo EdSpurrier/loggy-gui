@@ -1,0 +1,54 @@
+//
+//  MODULE: SEARCH
+//
+
+
+#search-panel {
+    background: $search_panel_bg;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    bottom: -100vh;
+    @include transition($med);
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    color: $search_panel_text;
+
+
+
+
+    &.active {
+        bottom: 0vh;
+    }
+
+    #search-meta {
+        margin-top: 40px;
+        display: flex;
+        position: relative;
+        justify-content: space-between;
+        padding: $stack-spacing;
+        border-bottom: 1px solid $search_panel_border;
+    }
+
+    .result {
+        display: flex;
+        cursor: pointer;
+        padding: $stack-spacing;
+        border-bottom: 1px solid $search_panel_bg;
+        background-color: $search_panel_button_bg;
+        display: flex;
+        position: relative;
+        justify-content: space-evenly;
+
+        @include transition($med);
+        &:hover, &.selected {
+            background-color: $search_panel_button_hover;
+        }
+
+        &:last-of-type {
+            margin-bottom: ($item-height *2);
+        }
+    }
+}

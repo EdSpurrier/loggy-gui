@@ -1,0 +1,164 @@
+//
+//  MODULE: comms
+//
+
+
+#comms-panel {
+    background: $search_panel_bg;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    bottom: -100vh;
+    @include transition($med);
+    overflow-y: auto;
+
+
+    .comms-header {
+        display: flex;
+        position: relative;
+        justify-content: space-between;
+        align-items: center;
+        height: $item-height;
+        border-bottom: 1px solid $search_panel_border;
+    }
+
+
+    &.active {
+        bottom: 0vh;
+    }
+    
+    button {
+        background-color: transparent;
+        height: $item-height;
+        width: $item-height;
+        &::before {
+            @include transition($fast);
+            @include scale(1.5);
+        }
+    }
+
+    .comms-header {
+        margin-top: 40px;
+        background: $important;
+        
+        .header-text {
+            font-size: $header-font-size;
+            padding: 0 $stack-spacing;
+        }
+
+        button {
+            &:hover {
+                background: $important_hover;
+                &::before {
+                    @include scale(1.75);
+                }
+            }
+        }
+    }
+
+
+    
+    #comms-list {
+
+        .comms-list-header {
+            background-color: $file_slide_tag_bg;
+        }
+
+
+        .actions {
+            button {
+                display: none;
+                @include transition($med);
+                ::before {
+                    @include transition($fast);
+                    @include scale(1.25);
+                }
+                &:hover {
+                    background: darken($alert, 10%);
+                    ::before {
+                        @include scale(1.5);
+                    }
+                }
+            }
+        }
+
+        .comms-item {
+            
+            &[data-status="Error"] {
+                background-color: darken($alert, 20%);
+                .actions {
+                    button {
+                        display: inline-block;
+                    }
+                }
+            }
+        }
+        
+
+        .comms-item, .comms-list-header {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            width: 100%;
+            height: $item-height;
+            border-bottom: 1px solid $search_panel_border;
+            position: relative;
+
+            div {
+                //border-left: 1px solid $search_panel_border;
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                height: $item-height;
+
+                &:first-of-type {
+                    border-left: none;
+                }
+            }
+            
+
+            .comms_unique_id {
+                width: 6%;
+            }
+            .comms_datetime {
+                width: 15%;
+            }
+            .destination {
+                width: 12%;
+            }
+            .destination_id {
+                width: 11%;
+            }
+            .target_id {
+                width: 5%;
+            }
+            .comm {
+                width: 25%;
+            }
+            .comm_data {
+                width: 8%;
+            }
+            .status {
+                width: 8%;
+            }
+            .actions {
+                width: 10%;
+            }
+
+
+        }  
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+}

@@ -1,0 +1,72 @@
+//
+//	MODULE: POPUP
+//
+
+#system-notify {
+
+    position: fixed;
+    bottom: 0px;
+    right: 0;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: right;
+    width: 400px;
+    padding: $spacing;
+
+
+    .notification {
+        margin: $spacing 0 0;
+        position: relative;
+        right: -35vw;
+        background: black;
+/*         display: flex;
+        justify-content: center;
+        align-items: center; */
+        //height: 50px;
+        //padding: $padding;
+        max-width: 100vw;
+        padding: $spacing ($spacing * 2) $spacing $spacing;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+        @include opacity(0);
+    
+        i {
+            margin-right: $spacing;
+        }
+    
+        &.success {
+            background-color: $success;
+            .icon-attention, .icon-info-1 {
+                display: none;
+            }
+        }
+    
+        &.note {
+            background-color: $note;
+            .icon-attention, .icon-info-1 {
+                display: none;
+            }
+        }
+    
+        &.alert {
+            background-color: $alert;
+            
+            .icon-quote, .icon-info-1 {
+                display: none;
+            }       
+        }
+    
+    
+        &.important {
+            background-color: $important;
+            
+            .icon-attention, .icon-quote {
+                display: none;
+            }
+        }
+    
+    }
+}
+

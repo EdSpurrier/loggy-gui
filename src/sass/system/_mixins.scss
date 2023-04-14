@@ -1,0 +1,115 @@
+//
+//  MIXINS
+//
+
+//  GET PALLET COLOR
+@function GetPaletteColor($color_name, $theme_id) {
+    $color_theme_choice : map-get($color_theme, $theme_choice);
+    $value : map-get($color_theme_choice, $color_name);
+    @return $value;
+};
+
+@function UnquoteLighten($color, $percent) {
+    @return lighten( unquote($color), 10% );
+};
+
+
+//  FONT SIZE
+@mixin font-size($sizeValue: 1.6) {
+  font-size: ($sizeValue * 10) + px;
+  font-size: $sizeValue + rem;
+}
+
+//  FONT SIZE
+@mixin link-color($link-color, $hover-color) {
+  .link, a:link, a:visited, a:active{color: $link-color;}
+  a:hover {color: $hover-color;}
+}
+
+//	GUTTERS
+@mixin gutters () {
+	@include sm {
+		padding-left: $padding-gutter-mobile;
+		padding-right: $padding-gutter-mobile;
+	}
+	@include md {
+		padding-left: $padding-gutter-tablet;
+		padding-right: $padding-gutter-tablet;
+	}
+	@include lg {
+		padding-left: $padding-gutter-desktop;
+		padding-right: $padding-gutter-desktop;
+	}
+}
+
+@mixin animate($animation...) {
+    -moz-animation:    $animation;
+    -o-animation:      $animation;
+    -webkit-animation: $animation;
+    animation:         $animation;
+}
+
+@mixin transition($transition...) {
+    -moz-transition:    $transition;
+    -o-transition:      $transition;
+    -webkit-transition: $transition;
+    transition:         $transition;
+}
+@mixin transition-property($property...) {
+    -moz-transition-property:    $property;
+    -o-transition-property:      $property;
+    -webkit-transition-property: $property;
+    transition-property:         $property;
+}
+@mixin transition-duration($duration...) {
+    -moz-transition-property:    $duration;
+    -o-transition-property:      $duration;
+    -webkit-transition-property: $duration;
+    transition-property:         $duration;
+}
+@mixin transition-timing-function($timing...) {
+    -moz-transition-timing-function:    $timing;
+    -o-transition-timing-function:      $timing;
+    -webkit-transition-timing-function: $timing;
+    transition-timing-function:         $timing;
+}
+@mixin transition-delay($delay...) {
+    -moz-transition-delay:    $delay;
+    -o-transition-delay:      $delay;
+    -webkit-transition-delay: $delay;
+    transition-delay:         $delay;
+}
+
+// generic transform
+@mixin transform($transforms) {
+	-moz-transform: $transforms;
+	-o-transform: $transforms;
+	-ms-transform: $transforms;
+	-webkit-transform: $transforms;
+	transform: $transforms;
+}
+// rotate
+@mixin rotate ($deg) {
+	@include transform(rotate(#{$deg}deg));
+}
+
+// scale
+@mixin scale($scale) {
+	@include transform(scale($scale));
+}
+// translate
+@mixin translate ($x, $y) {
+	@include transform(translate($x, $y));
+}
+// skew
+@mixin skew ($x, $y) {
+	@include transform(skew(#{$x}deg, #{$y}deg));
+}
+//transform origin
+@mixin transform-origin ($origin) {
+	moz-transform-origin: $origin;
+	-o-transform-origin: $origin;
+	-ms-transform-origin: $origin;
+	-webkit-transform-origin: $origin;
+	transform-origin: $origin;
+}

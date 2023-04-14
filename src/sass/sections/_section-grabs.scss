@@ -1,0 +1,150 @@
+//
+//	SECTIONS: GRABS
+//
+
+body.no-chain {
+
+    .file-slide[data-file-id="orders"], .file-slide[data-file-id="containers"] {
+            @include opacity(0.25);
+    }
+
+    .file-slide[data-file-id="grabs"] {
+/*          @include respond-above(md) {
+            width: 100vw;
+
+            .stack-column {
+                width: 0vw;
+            }
+
+            .stack-display {
+                width: 100vw;
+            }
+
+            &.active {
+                left: 0vw;
+            }
+                
+        } */
+    }
+}
+
+.file-slide[data-file-id="grabs"] {
+    @include respond-above(md) {
+        width: 70vw;
+
+        .stack-column {
+            width: 15vw;
+        }
+
+        .stack-display-column {
+            width: 55vw;
+        }
+
+        &.active {
+            left: 30vw;
+        }
+            
+    }
+
+
+    
+    .stack-item-button {
+        
+        .grab_number {
+            width: 20%;
+        }
+
+        .grab_weight {
+            width: 80%;
+        }
+
+    }
+
+
+    .stack-display {
+        position: relative;
+        align-self: stretch;
+        width: 100%;
+
+        .display-img-wrap {
+            width: 100%;
+            position: relative;
+
+            .display-img {
+                width: 100%;
+            }
+        }
+
+        .grab-data {
+            position: relative;
+        }
+
+        .bounding-box {
+            border: 2px solid greenyellow;
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            cursor: pointer;
+            @include border-radius(100px);
+            
+
+            .log-info-popup {
+                background-color: white;
+                color: black;
+                display: none;
+                padding: $spacing;
+                position: absolute;
+                left: -100px;
+                width: 100px;
+                @include opacity(0);
+                @include transition($med);
+
+                @extend .box-shadow;
+
+                img {
+                    width: 100%;
+                }
+
+                .popup-triangle {
+                    position: absolute;
+                    top: 0;
+                    right: -10px;
+                    width: 0;
+                    height: 0;
+                    border-style: solid;
+                    border-width: 10px 0 15px 10px;
+                    border-color: transparent transparent transparent #ffffff;
+                }
+            }
+
+            .measure-line {
+                height: 0;
+                width: 100%;
+                top: 50%;
+                border: 1px solid $medium;
+                position: absolute;
+            }
+
+            @include scale(1);
+            @include transition($med);
+            &:hover {
+                border: 2px solid $medium-light;
+                //@include scale(1.1);
+                z-index: 80;
+
+                .log-info-popup {
+                    @include opacity(1);
+                    display: block;
+                    
+                }
+            }
+        }
+
+
+
+    }
+}
+    
+      

@@ -1,0 +1,24 @@
+//
+//	SECTIONS: INBOUND
+//
+
+
+.file-slide[data-file-id="inbound"] {
+       
+    @include respond-above(md) {
+        width: 85vw;
+        .stack-column {
+            width: 15vw;
+        }
+
+        .stack-display {
+            width: 70vw;
+        }
+
+        &.active {
+            left: 15vw;
+        }
+    
+    }
+    
+}

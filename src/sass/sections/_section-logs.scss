@@ -1,0 +1,103 @@
+//
+//	SECTIONS: LOGS
+//
+
+
+.file-slide[data-file-id="logs"] {
+    @include respond-above(md) {    
+        width: 55vw;
+
+        .stack-column {
+            width: 55vw;
+        }
+
+        &.active {
+            left: 45vw;
+        }
+    
+    }
+
+    @include respond-below(md) {
+        .stack-column {
+            width: 100vw;
+        }
+
+        &.active {
+            left: 0vw;
+        }
+    } 
+
+
+
+    .loading-overlay {
+        display: flex;
+        @include opacity(1);
+        background-color: transparent;
+        @include transition($med);
+        right: 10px;
+        background-color: $dark;
+        .sk-cube-grid {
+            width: 50px;
+            height: 50px;
+            margin: 100px auto;
+          }
+    }
+
+
+    
+    .stack-item-header {
+        display: flex;
+        align-items: center;
+        padding: 20px;
+        justify-content: space-around;
+        background-color: $file_slide_tag_bg;
+        border-bottom: 1px solid $stack_selector_border;
+
+        .img-header {
+            padding: 0 10px 0 0;
+            width: 50px;
+            text-align: center;
+        }
+        .text-header {
+            text-align: center;
+            width: 20%;
+        }
+    }
+
+    .stack-item-button-selector {
+        align-items: center;
+        padding: ($spacing/2) $spacing;
+        justify-content: space-around;
+
+        .data-output-stack-button-img {
+            padding: 0 10px 0 0;
+            height: 50px;
+            width: 50px;
+            position: relative;
+            img {
+                height: 50px;
+                @include opacity(0);
+                @include transition($med);
+            }
+        }
+
+        &.active {
+            .loading-overlay {
+                @include opacity(0);
+            }
+            .data-output-stack-button-img {
+                img {
+                    @include opacity(1);
+                }
+            }
+        }
+
+        .data-output-stack-button {
+            text-align: center;
+            width: 20%;
+        }
+
+
+    }
+
+}

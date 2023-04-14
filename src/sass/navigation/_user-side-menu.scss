@@ -1,0 +1,67 @@
+//
+//  NAV: SIDE MENU
+//
+
+#user-menu-button {
+
+    padding: 4px 8px;
+
+    #user-avatar {
+        height: 28px;
+        width: 28px;
+        @include border-radius(50px);
+        overflow: hidden;
+        border: 2px solid $avatar_border;
+        cursor: pointer;
+        @include opacity(0.8);
+        @include transition($med);
+
+        #avatar-image {
+            height: 32px;
+        }
+
+        &:hover {
+            @include opacity(1);
+            @include scale(1.1);
+            border: 2px solid $avatar_border_hover;
+        }
+    }
+
+}
+
+nav {
+    &#user-menu-nav {
+
+        width: 25vw;
+        height: 100vh;
+        position: absolute;
+        top: 0;
+        left: -25vw;
+        @include transition($med);
+
+        background: $side_menu_bg;
+        border-right: $file_slide_border;
+
+        #menu-stack {
+            margin-top: 40px;
+            .menu-item {
+                height: $item-height;
+                @include transition($med-fast);
+                color: $form_input_text_focus;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+                border-bottom: 1px solid $side_menu_border;
+                &:hover {
+                    background-color: $side_menu_item_hover;
+                }
+            }
+        }
+
+        &.active {
+            left: 0vw;
+        }
+    }
+}

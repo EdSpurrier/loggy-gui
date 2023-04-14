@@ -1,0 +1,39 @@
+//
+//	TEMPLATE FRAMEWORK
+//
+
+//	Template Global Variables
+
+// Timing
+$slow                           : 1s;
+$med-slow                       : 0.75s;
+$med                            : 0.5s;
+$med-fast                       : 0.25s;
+$fast                           : 0.15s;
+
+
+//  Font Sizes
+$header-font-size               : 20px;
+$body-font-size                 : 15px;
+$input-font-size                : 15px;
+$selector-font-size             : 20px;
+
+//  > Sizes
+$header-height                  : 40px;
+$footer-height                  : 40px;
+$item-height                    : 60px;
+
+//  > Spacing
+$padding                        : 17px 20px;
+$input-padding                  : 20px;
+$button-padding                 : 10px 13px;
+$label-margin                   : 0 10px 0 0;
+$margin-h1                      : 0 0 15px 0;
+$spacing                        : 15px;
+
+//  > Radius
+$section-radius                 : 5px;
+$button-radius                  : 0px;
+
+//  > Custom
+$stack-spacing                  : 20px;

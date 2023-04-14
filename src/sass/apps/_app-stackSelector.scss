@@ -1,0 +1,300 @@
+//
+//  APP: STACK SELECTOR
+//
+
+
+
+.item-dropdown-active {
+    &.dropdown {
+        
+/*         .stack-item-drop-down {
+            height: 70px;
+            @include opacity(1);
+        }
+        //margin-bottom: 70px;
+        &.file-slide-button {
+            margin-bottom: 0px;
+        } */
+    }
+}
+
+.stack-display-column {
+    display: flex;
+    //@extend .user-select;
+    background: $file_slide_bg;
+    overflow-y: auto;
+    position: relative;
+
+    margin-bottom: 64px;
+
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        height: $item-height;
+        
+
+        .header_text {
+            padding: 0 $stack-spacing;
+            font-size: $header-font-size;
+        }
+
+        border-bottom: 1px solid $header_border;
+        
+        button {
+            background-color: transparent;
+            height: $item-height;
+            width: $item-height;
+            &::before {
+                @include transition($fast);
+                @include scale(1.5);
+            }
+            
+            &:hover {
+                background: $header_border;
+                &::before {
+                    @include scale(1.75);
+                }
+            }
+        }
+
+        
+    }
+
+    .data-output {
+        .data-line {
+            border-bottom: 1px solid $header_border;
+            padding: $input-padding;
+        }
+    }
+
+    .data-input-line {
+        border-bottom: 1px solid $header_border;
+        
+    }
+
+
+    .event-output {
+        border-bottom: 1px solid $header_border;
+        padding: $input-padding;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .event-header, .data-output-event-line {
+            padding-bottom: $spacing / 2;
+            i {
+                margin-right: $spacing / 2;
+            }
+        }
+
+        .event-header {
+            font-size: $header-font-size;
+            i {
+                //font-size: $body-font-size;
+            }
+        }
+
+        .data-output-event-line {
+            display: flex;
+            justify-content: left;
+            align-items: center;
+        }
+
+        .data-output-event-display {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-width: 320px;
+        }
+    }
+
+
+    .create-display, .no-data-display {
+        display: none;
+
+        .data-input {
+            width: 100%;  
+        }
+        
+
+    }
+
+    &.create {
+        .data-display {
+            display: none;
+            @include opacity(0);
+        }
+        .create-display {
+            display: flex;
+        }
+    }
+
+    &.no-data {
+        .data-display, .create-display {
+            display: none;
+            @include opacity(0);
+        }
+
+        .no-data-display {
+            display: flex;
+        }
+    }
+}
+
+
+
+
+.stack-column {
+    overflow-y: auto;
+    background: $stack_column_bg;
+    direction: rtl;
+    position: relative;
+    margin-bottom: 64px;
+
+    .loading-overlay {
+        background: $stack_column_bg;
+    }
+    
+    div {
+        direction: ltr;
+    }
+
+
+    
+    .create-item-button {
+        .create-item-button-selector {
+            cursor: pointer;
+            padding: 0 $stack-spacing;
+            height: $item-height;
+            border-bottom: 1px solid $stack_selector_border;
+            background-color: $create_item_bg;
+            display: flex;
+            position: relative;
+            justify-content: space-evenly;
+            align-items: center;
+    
+            @include transition($med);
+
+            i {
+                font-size: 20px;
+            }
+
+            &:hover {
+                background-color: $create_item_bg_hover;
+            }
+
+            .selected-triangle {
+                position: absolute;
+                right: 0;
+                top: 50%;
+                margin-top: -25px;
+                width: 0;
+                height: 0;
+                border-style: solid;
+                border-width: 25px 0px 25px 0;
+                border-color: transparent $file_slide_bg transparent transparent;
+                @include transition($med);
+            }
+            
+        }
+        
+        &.selected {
+            
+            .create-item-button-selector {
+                background-color: $create_item_active_bg;
+            }
+
+            .selected-triangle {
+                margin-top: -15px;
+                border-width: 15px 15px 15px 0;
+            }
+
+        }
+    }
+
+    .stack-item-button {
+        
+
+
+        .stack-item-button-selector {
+            cursor: pointer;
+            padding: $stack-spacing;
+            border-bottom: 1px solid $stack_selector_border;
+            background-color: $stack_selector_bg;
+            display: flex;
+            position: relative;
+            justify-content: space-evenly;
+    
+            @include transition($med);
+            &:hover {
+                background-color: $medium-hover;
+            }
+        }
+        
+
+        .stack-item-drop-down {
+            top: 100%;
+            left: 0;
+            width: 100%;
+            cursor: initial;
+            background-color: $stack_selector_dropdown_bg;
+            display: flex;
+            overflow: hidden;
+            justify-content: center;
+            align-items: center;
+            height: 0px;
+            @include transition($med);
+            @include opacity(0);
+        }
+
+
+        .selected-triangle {
+            position: absolute;
+            right: 0;
+            top: 50%;
+            margin-top: -25px;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 25px 0px 25px 0;
+            border-color: transparent $file_slide_bg transparent transparent;
+            @include transition($med);
+        }
+
+
+        &:hover {
+            @extend .item-dropdown-active;
+        }
+
+        &.selected {
+            
+            .stack-item-button-selector {
+                background-color: $light;
+            }
+
+            .selected-triangle {
+                margin-top: -15px;
+                border-width: 15px 15px 15px 0;
+            }
+
+            @extend .item-dropdown-active;
+        }
+
+        &.no-events {
+
+            .stack-item-button-selector {
+                background-color: $stack_selector_bg_no_events;
+            };
+
+            &.selected {
+                .stack-item-button-selector {
+                    background-color: $stack_selector_bg_no_events_selected;
+                }
+            }
+        }
+    }
+
+
+}

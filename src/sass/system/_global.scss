@@ -1,0 +1,29 @@
+body {
+/*     font-family: 'Bree Serif', serif;
+    font-family: 'Alegreya Sans SC', sans-serif;
+font-family: 'PT Sans Narrow', sans-serif;
+ */    
+    font-family: 'Lato', sans-serif;
+    color: $body_text;
+    
+    background-color: $body_bg;
+    margin: 0;
+    padding: 0;
+    
+
+    a, a:link {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    .hide {
+        display: none !important;
+    }
+
+    .template, .data {
+        display: none !important;
+    }
+
+    @extend .no-user-select;
+}
+

@@ -1,0 +1,129 @@
+//
+//	HIERARCHY
+//
+
+//	LEVEL 00
+.z0, body
+{z-index: 0;}
+
+//	LEVEL 01
+.z1, #background-overlay
+{z-index: 1;}
+
+//	LEVEL 02
+.z2, .angle-background
+{z-index: 2;}
+
+//	LEVEL 020
+.z20
+{z-index: 20;}
+
+//	LEVEL 030
+.z30, #content
+{z-index: 30;}
+
+//	LEVEL 040
+.z40
+{z-index: 40;}
+
+//	LEVEL 041
+.z41, [data-file-index="1"]
+{z-index: 41;}
+
+//	LEVEL 042
+.z42, [data-file-index="2"]
+{z-index: 42;}
+
+//	LEVEL 043
+.z43, [data-file-index="3"]
+{z-index: 43;}
+
+//	LEVEL 044
+.z44, [data-file-index="4"]
+{z-index: 44;}
+
+//	LEVEL 045
+.z45, [data-file-index="5"]
+{z-index: 45;}
+
+//	LEVEL 046
+.z46, [data-file-index="6"]
+{z-index: 46;}
+
+//	LEVEL 50
+.z50, .bounding-box
+{z-index: 50;}
+
+//	LEVEL 51
+.z51, .log-info-popup
+{z-index: 51;}
+
+//	LEVEL 55
+.z55, #search-panel, #event-panel, #comms-panel, #importer-panel, #container-detector-panel, .container-detector-tools
+{z-index: 55;}
+
+//	LEVEL 59
+.z59, #event-header, #event-meta, #system-chain-stack
+{z-index: 59;}
+
+
+
+//	LEVEL 60
+.z60, #side-menu-nav, #user-menu-nav
+{z-index: 60;}
+
+//	LEVEL 61
+.z61, #header-nav
+{z-index: 61;}
+
+//	LEVEL 63
+.z63, #window-blackout
+{z-index: 63;}
+
+//	LEVEL 65
+.z65, .window
+{z-index: 65;}
+
+
+//	LEVEL 70
+.z70, .loading-overlay
+{z-index: 70;}
+
+
+
+//	LEVEL 80
+.z80, #console
+{z-index: 80;}
+
+
+
+//	LEVEL 90
+.z90, #footer-nav
+{z-index: 90;}
+
+//	LEVEL 95
+.z95, .overlay
+{z-index: 95;}
+
+//  LEVEL 100
+.z100, #system-popup
+{z-index: 100;}
+
+//  LEVEL 105
+.z105, #system-popup #popup-window
+{z-index: 105;}
+
+
+//  LEVEL 200
+.z200, .print-wrap
+{z-index: 200;}
+
+
+//  LEVEL 250
+.z250, #system-notify
+{z-index: 250;}
+
+
+//  LEVEL 300
+.z300, #loading-screen
+{z-index: 300}

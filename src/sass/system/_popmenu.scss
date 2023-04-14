@@ -1,0 +1,140 @@
+/**
+ * jQuery PopMenu
+ * 
+ * Default stylesheet for jQuery PopMenu.
+ * 
+ * @version  1.0.0
+ * @author   Fajar Chandra
+ * @since    2014.05.29
+ */
+
+/* CONTAINER */
+
+.PopMenu {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 100000;
+}
+
+/* MENU */
+
+.PopMenu-Menu {
+	box-shadow: 2px 2px 5px $file_slide_tag_bg;
+	box-shadow: 2px 2px 5px rgba(0,0,0,.25);
+	background: $file_slide_tag_bg;
+	color: $file_slide_tag_text;
+	border-color: $search_panel_border;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	font-size: 12px;
+	font-family: 'Arial', sans-serif;
+	cursor: default;
+	line-height: 1.2em;
+	position: absolute;
+	top: 0;
+	left: 100%;
+	z-index: 100000;
+}
+
+
+/* TOP LEVEL MENU */
+
+.PopMenu-TopMenu {
+	top: 0;
+	left: 0;
+}
+
+
+/* MENU ITEM */
+
+.PopMenu-Item {
+	position: relative;
+}
+
+.PopMenu-Item > a {
+	position: relative;
+	color: $file_slide_tag_text;
+	text-decoration: none;
+	cursor: pointer;
+	display: block;
+	padding: 5px 15px 5px 30px;
+	min-width: 100px;
+	z-index: 1;
+	white-space: nowrap;
+	@include transition($med);
+}
+
+.PopMenu-Item.selected,
+.PopMenu-Item:hover {
+	background: $search_panel_border;
+}
+
+.PopMenu-Item.selected > a,
+.PopMenu-Item:hover > a {
+	color: $body_text;
+	text-decoration: none;
+}
+
+.PopMenu-Item.disabled {
+	background: transparent;
+}
+
+.PopMenu-Item.disabled > a {
+	color: #aaa;
+}
+
+/* MENU ICON */
+
+.PopMenu-Icon {
+	position: absolute;
+	left: 5px;
+	top: 50%;
+	margin-top: -8px;
+	height: 16px;
+	width: 16px;
+	font-size: 16px;
+	line-height: 16px;
+	color: $file_slide_tag_text;
+	display: block;
+	text-align: center;
+	z-index: 0;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
+.PopMenu-Item.disabled .PopMenu-Icon {
+	color: #aaa;
+}
+
+/* MENU SEPARATOR */
+
+.PopMenu-Separator {
+	display: block;
+	height: 1px;
+	background: $search_panel_border;
+	margin: 0 2px;
+}
+
+.PopMenu-Separator * {
+	display: none;
+}
+
+/* SUBMENU */
+
+.PopMenu-Item.PopMenu-HasMenu > a:after {
+	 content: '▶';
+	 display: block;
+	 position: absolute;
+	 right: 5px;
+	 top: 4px;
+	 height: 14px;
+	 width: 14px;
+	 text-align: center;
+	 vertical-align: middle;
+	 font-size: 8px;
+	 line-height: 14px;
+}

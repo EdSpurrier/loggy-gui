@@ -1,0 +1,50 @@
+//
+//  RESPONSIVE
+//
+
+
+$one_unit : 10%;
+
+.row {
+    display: flex;
+}
+
+.column-1 {
+    width: $one_unit * 1;
+}
+
+.column-2 {
+    width: $one_unit * 2;
+}
+
+.column-3 {
+    width: $one_unit * 3;
+}
+
+.column-4 {
+    width: $one_unit * 4;
+}
+
+.column-5 {
+    width: $one_unit * 5;
+}
+
+.column-6 {
+    width: $one_unit * 6;
+}
+
+.column-7 {  
+    width: $one_unit * 7;
+}
+
+.column-8 {
+    width: $one_unit * 8;
+}
+
+.column-9 {
+    width: $one_unit * 9;
+}
+
+.column-10 {
+    width: $one_unit * 10;
+}

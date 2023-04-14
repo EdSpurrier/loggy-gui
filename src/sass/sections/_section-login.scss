@@ -1,0 +1,36 @@
+//
+//	SECTIONS: LOG IN
+//
+
+#system-popup {
+    &.login-panel {
+        display: flex;
+        #popup-window {
+            .window-header {
+                background-color: $important !important;
+            }
+    
+            #login-panel {
+                .login-button {
+                    width: 100%;
+                    padding: 0 $stack-spacing;
+                    height: $item-height;
+                }
+                .form-group {
+                    display: block;
+                    //padding: $stack-spacing;
+                }
+
+                .has-error {
+                    .help-block {
+                        background: $header_border;
+                        padding: $stack-spacing / 2;
+                    }
+                }
+                
+            }
+        }
+        
+
+    }
+}

@@ -1,0 +1,129 @@
+//
+//  MODULE: EVENT
+//
+
+
+#importer-panel {
+    background: $search_panel_bg;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    bottom: -100vh;
+    @include transition($med);
+    overflow-y: auto;
+
+    &.active {
+        bottom: 0vh;
+    }
+
+    
+    #importer-header {
+        margin-top: 40px;
+        background: $note;
+    }
+    
+    button {
+        background-color: transparent;
+        height: $item-height;
+        width: $item-height;
+        &::before {
+            @include transition($fast);
+            @include scale(1.5);
+        }
+    }
+
+
+
+    #importer-meta, #importer-header {
+        display: flex;
+        position: relative;
+        justify-content: space-between;
+        align-items: center;
+        height: $item-height;
+        border-bottom: 1px solid $search_panel_border;
+
+        .header-text {
+            padding: 0 $stack-spacing;
+            font-size: $header-font-size;
+        }
+    
+        button {
+            &:hover {
+                background: $note_hover;
+                &::before {
+                    @include scale(1.75);
+                }
+            }
+        }
+
+        
+    }
+
+    #assignment-form {
+    }
+
+    .dropdown-menu {
+        width: 100vw;
+        //margin: $spacing auto;
+        .container-add-button {
+            cursor: pointer;
+            //padding: 0 $stack-spacing;
+            height: $item-height;
+            border-bottom: 1px solid $header_border;
+            
+            display: flex;
+            position: relative;
+            justify-content: space-between;
+            align-items: center;
+    
+            @include transition($med);
+
+            div {
+                padding: 0 $stack-spacing;
+            }
+
+            i {
+                font-size: 20px;
+            }
+
+            
+
+            button {
+                &::before {
+                    @include scale(0);
+                }
+            }
+
+            &.check {
+                background-color: $stack_selector_bg;
+                button {
+                    &::before {
+                        @include scale(1.25);
+                    }
+                }
+            }
+
+            &.check:hover {
+                background-color: $medium-hover;
+                button {
+                    &::before {
+                        @include scale(1.75);
+                    }
+                }
+            }
+
+            &:hover {
+                background-color: $search_panel_button_hover;
+                button {
+                    &::before {
+                        @include scale(0);
+                    }
+                }
+            }
+        }
+
+        
+    }
+
+}

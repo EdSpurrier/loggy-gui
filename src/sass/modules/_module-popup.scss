@@ -1,0 +1,89 @@
+//
+//	MODULE: POPUP
+//
+
+#system-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: $popup_blackout;
+    justify-content: center;
+    align-items: center;
+    display: none;
+
+
+    &.active {
+        display: flex; /* or inline-flex */
+    }
+
+
+    .window {
+        .in-active {
+            display: none;
+        }
+    
+        background: white;
+        //@include border-radius ($section-radius);
+        overflow: hidden;
+        @extend .box-shadow;
+        color:  $body_text;
+        
+        .window-header {
+            background-color: $light;
+            padding: $padding;
+            font-size: $header-font-size;
+        }
+    
+        .content {
+            padding: $padding;
+        }
+    }
+
+    #popup-window {
+        text-align: center;
+        color:  $popup_window_text;
+        background-color: $popup_window_bg;
+
+        #popup-output {
+            padding-bottom: $spacing;
+        }
+
+        #close-popup {
+            color:  $button_text;
+        }
+    }
+    
+    &.error {
+        .window-header {
+            background-color: $alert;
+        }
+
+        #close-popup {
+            background-color: $alert;
+            &:hover {
+                background-color: $alert_hover;
+            }
+        }
+    }
+
+
+
+    #agree-popup, #cancel-popup {
+        display: none;
+    }
+
+    &.action {
+        #agree-popup {
+            margin-left: $spacing;
+            display: inline-flex;
+        }
+        #cancel-popup {
+            display: inline-flex;
+        }
+        #close-popup {
+            display: none;
+        }
+    }
+}
